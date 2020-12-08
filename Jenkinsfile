@@ -15,15 +15,16 @@ pipeline{
         }
         stage('Package'){
             steps{
-                echo "Package(making jar) Stage"
+                echo "Package Stage"
                 sh "mvn package"
             }
         }
-        stage('Deploy'){
+        stage('install'){
             steps{
-                echo "Deploy(to nexus server) Stage"
-                sh "mvn deploy"
+                echo "install Stage"
+                sh "mvn install"
             }
         }
+        
     }
 }
